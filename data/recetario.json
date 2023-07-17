@@ -94,39 +94,19 @@
         "creacion": "2023-07-11",
         "id_receta": 4
     },
-    "cafe Irlandes": {
-        "nombre": "cafe Irlandes",
-        "ingredientes": [],
-        "preparacion": [
-            "hacer un cafe doble",
-            "agregar whisky"
-        ],
-        "tiempo_prep": "5 minutos",
-        "tiempo_coc": "10 segundos",
-        "creacion": "2023-07-15",
-        "id_receta": 5
-    },
-    "Capuccino": {
-        "nombre": "Capuccino",
+    "Cafe Doppio": {
+        "nombre": "Cafe Doppio",
         "ingredientes": [
             [
                 "leche",
-                1,
+                "1",
                 "centimetros cubicos"
-            ],
-            [
-                "azucar",
-                1,
-                "gramos"
             ]
         ],
-        "preparacion": [
-            "hace espresso",
-            "agregar 5 onzas de leche"
-        ],
-        "tiempo_prep": "10 minutos",
+        "preparacion": [],
+        "tiempo_prep": "5 minutos",
         "tiempo_coc": "10 segundos",
-        "creacion": "2023-07-16",
-        "id_receta": 8
+        "creacion": "2023-07-17",
+        "id_receta": 12
     }
 }

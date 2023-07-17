@@ -44,11 +44,15 @@ class Principal(ttk.Frame):
             if rta:
                 print("***VEAMOS EL ID ANTES DE ELIMINAR***")
                 print(nombre)
-                self.recetario.eliminar(nombre)
-                self.recetario.guardar()
+                self.recetario.eliminar(nombre)                
+                # for receta in self.recetario.recetas.values():
+                #       print(receta.nombre)
+                #       print(receta.id_receta)
+                #       print(receta.ing_to_lista())
+                
+                recetasDBservice().deleteOne(id_receta)
                 self.cargar_tabla()
-                res = recetasDBservice().deleteOne(id_receta)
-                print(res)
+                
 
     def on_btn_nueva(self):
         """Abrir ventana para carga de una nueva receta."""

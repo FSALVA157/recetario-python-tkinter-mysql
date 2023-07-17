@@ -180,6 +180,7 @@ class Recetario:
             return False
         else:
             print("pasando por SI existe")
+            
             del self.recetas[nombre]
             self.guardar()
 
