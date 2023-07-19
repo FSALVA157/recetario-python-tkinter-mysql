@@ -98,26 +98,8 @@
         "creacion": "2023-07-18",
         "id_receta": 13
     },
-    "Ensalada de Tomate": {
-        "nombre": "Ensalada de Tomate",
-        "ingredientes": [
-            [
-                "sal",
-                1,
-                "gramos"
-            ]
-        ],
-        "preparacion": [
-            "picar tomate",
-            "picar lechuga"
-        ],
-        "tiempo_prep": "10 minutos",
-        "tiempo_coc": "nada",
-        "creacion": "2023-07-18",
-        "id_receta": 14
-    },
-    "Puchero con Poroto": {
-        "nombre": "Puchero con Poroto",
+    "Puchero Criollo": {
+        "nombre": "Puchero Criollo",
         "ingredientes": [
             [
                 "papa",

@@ -1,4 +1,17 @@
-# Recetario de cocina
+# Recetario de cocinaç
+
+## Integracion a Base de Datos
+
+* Los servicios implementados se encuentran en la carpeta "services"
+* La configuracion de la conexion se encuentra en el archivo config_data.json
+* Esta implementacion realiza el CRUD completo y ha sido desarrollada en Sistema Operativo Linux Ubuntu
+* Por este motivo puede haber algun problema al ejecutar desde windows pues la ruta del archivo de configuracion en cada servicio requiere que se inviertan las barras por ejemplo
+* El DER se encuentra en el propio proyecto "TP_1-DER-recetario-2023.png"
+* el .sql de la base de datos tambien esta en la raiz del proyecto "recetariodb.sql"
+* Al crear una receta no puedo agregar los ingredientes, solo podre agregarlos al modificar la receta ya creada (esto por falta de tiempo)
+* Al agregar un ingrediente lo hace con el campo cantidad predeterminado(tambien por falta de tiempo)
+* En caso de desear bajar toda la aplicacion desde Github esta es la direccion "https://github.com/FSALVA157/recetario-python-tkinter-mysql.git"
+
 
 ## Consigna
 
