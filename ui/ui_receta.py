@@ -3,6 +3,7 @@ import tkinter as tk
 from tkinter import ttk, messagebox
 from services.ingrediente_service import IngredienteService as IngredientesServiceDB
 from services.ingrediente_receta_service import IngredienteRecetaService as IngredienteRecetaServiceDB
+from services.receta_service import RecetaService as RecetasServiceDB
 
 from clases import Receta, Ingrediente
 
@@ -340,18 +341,20 @@ class RecetaFrame(ttk.Frame):
         
         if accion == "crear" or accion == "modificar":
             # botones p/agregar ingredientes y pasos de prep
-            marco_btn_ing = ttk.Frame(self)
-            marco_btn_ing.grid(row=4, column=0, columnspan=3, sticky=tk.E)
-            btn_del_ing = ttk.Button(marco_btn_ing, text="Eliminar", command=self.eliminar_ingrediente)
-            btn_del_ing.grid(row=0, column=0, columnspan=1, sticky=tk.E, padx=3, pady=3)
-            btn_mod_ing = ttk.Button(marco_btn_ing, text="Modificar", command=self.modificar_ingrediente)
-            btn_mod_ing.grid(row=0, column=1, columnspan=1, sticky=tk.E, padx=3, pady=3)
-            btn_mas_ing = ttk.Button(marco_btn_ing, text="Agregar ingrediente",
-                                     command=self.agregar_ing)
-            btn_mas_ing.grid(row=0, column=2, columnspan=2, sticky=tk.E, padx=3, pady=3)
-            btn_crear_ing = ttk.Button(marco_btn_ing, text="Crear ingrediente",
-                                     command=self.agregar_ing)
-            btn_crear_ing.grid(row=1, column=3, columnspan=3, sticky=tk.E, padx=3, pady=3)
+            if(accion == "modificar"):
+                marco_btn_ing = ttk.Frame(self)
+                marco_btn_ing.grid(row=4, column=0, columnspan=3, sticky=tk.E)
+                btn_del_ing = ttk.Button(marco_btn_ing, text="Eliminar", command=self.eliminar_ingrediente)
+                btn_del_ing.grid(row=0, column=0, columnspan=1, sticky=tk.E, padx=3, pady=3)
+                btn_mod_ing = ttk.Button(marco_btn_ing, text="Modificar", command=self.modificar_ingrediente)
+                btn_mod_ing.grid(row=0, column=1, columnspan=1, sticky=tk.E, padx=3, pady=3)
+
+                btn_mas_ing = ttk.Button(marco_btn_ing, text="Agregar ingrediente",
+                                     command=self.agregar_ing)            
+                btn_mas_ing.grid(row=0, column=2, columnspan=2, sticky=tk.E, padx=3, pady=3)
+            # btn_crear_ing = ttk.Button(marco_btn_ing, text="Crear ingrediente",
+            #                          command=self.agregar_ing)
+            # btn_crear_ing.grid(row=1, column=3, columnspan=3, sticky=tk.E, padx=3, pady=3)
 
             marco_btn_prep = ttk.Frame(self)
             marco_btn_prep.grid(row=6, column=0, columnspan=3, sticky=tk.E)
@@ -507,6 +510,17 @@ class RecetaFrame(ttk.Frame):
                 # creamos una nueva clave con el valor de la vieja
                 self.recetario.recetas[nombre_nuevo] = self.recetario.recetas.pop(nombre_actual)
             self.recetario.guardar()
+            """hagamos la peticion para guardar la receta modificada en la db"""
+                
+            receta_para_db = {
+                "nombre_receta": self.in_nombre.get(),
+                 "preparacion": str(self.preparacion),
+                  "duracion": self.in_tpreparacion.get(),
+                  "coccion": self.in_tcoccion.get()                  
+                  }
+           
+            res = RecetasServiceDB().updateOne(self.receta.id_receta, receta_para_db)
+            print(res)
         else:
             # crear nueva Receta
             receta = {}
@@ -522,6 +536,8 @@ class RecetaFrame(ttk.Frame):
             # print(self.receta)
             #self.recetario.insertar(self.receta)
             self.recetario.crearRecetaEnDB(self.receta)
+            
+
         self.completado()   # recarga la tabla principal
         self.ventana.destroy()
 

@@ -138,8 +138,9 @@ class RecetaService:
     
     def updateOne(self, id, data):
         try:
-            query = """UPDATE receta SET nombre_receta=%s, preparacion=%s, tiempo_preparacion=%s, tiempo_coccion=%s, imagen=%s, es_favorita=%s WHERE id_receta = %s"""
-            new_data = (data['nombre_receta'], data['preparacion'], data['duracion'], data['coccion'], data['imagen'],data['favorita'], id)
+            query = """UPDATE receta SET nombre_receta=%s, preparacion=%s, tiempo_preparacion=%s, tiempo_coccion=%s            
+              WHERE id_receta = %s"""
+            new_data = (data['nombre_receta'], data['preparacion'], data['duracion'], data['coccion'], id)
             self.cur.execute(query, new_data)                        
             num_rows_affected = self.cur.rowcount
 
@@ -170,10 +171,13 @@ class RecetaService:
 if __name__ == "__main__":
     receta_s =  RecetaService()            
     # res =  receta_s.createOne("guiso", {"preparacion": "['agregar carne trozada', 'agregar papa trozada', 'hervir agua']", "duracion": "1 hora", "coccion": "45 minutos", "imagen": "guiso.jpg", "favorita": 0})
-    res = receta_s.getAll()
+    #res = receta_s.getAll()
     #res = receta_s.getOne(1)
     #res = receta_s.deleteOne(3)
-    #res = receta_s.updateOne(1,{"nombre_receta": "sopa crema","preparacion": "{'agregar medio choclo', 'carne trozada', 'hervir agua'}", "duracion": "40 minutos", "coccion": "30 minutos", "imagen": "imagen-1","favorita": 1})
+    res = receta_s.updateOne(1,{"nombre_receta": "Puchero","preparacion": "['agregar medio choclo', 'carne trozada', 'hervir agua']", "duracion": "40 minutos", "coccion": "30 minutos"
+                                #  "imagen": "sopaverd.jpg","favorita": 1
+                                 }
+                                                                  )
     print(res)
 
         

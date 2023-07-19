@@ -1,28 +1,4 @@
 {
-    "ensalada": {
-        "nombre": "ensalada",
-        "ingredientes": [
-            [
-                "papa",
-                500,
-                "gramos"
-            ],
-            [
-                "zapallo",
-                500,
-                "gramos"
-            ]
-        ],
-        "preparacion": [
-            "agregar carne trozada",
-            "agregar papa trozada",
-            "hervir agua"
-        ],
-        "tiempo_prep": "15 minutos",
-        "tiempo_coc": "0 minutos",
-        "creacion": "2023-07-11",
-        "id_receta": 1
-    },
     "fideos con salsa": {
         "nombre": "fideos con salsa",
         "ingredientes": [
@@ -69,6 +45,11 @@
                 "fideos",
                 100,
                 "gramos"
+            ],
+            [
+                "sal",
+                1,
+                "gramos"
             ]
         ],
         "preparacion": [
@@ -94,19 +75,75 @@
         "creacion": "2023-07-11",
         "id_receta": 4
     },
-    "Cafe Doppio": {
-        "nombre": "Cafe Doppio",
+    "Cafe Latte": {
+        "nombre": "Cafe Latte",
         "ingredientes": [
             [
                 "leche",
-                "1",
+                1,
                 "centimetros cubicos"
+            ],
+            [
+                "azucar",
+                1,
+                "gramos"
             ]
         ],
-        "preparacion": [],
-        "tiempo_prep": "5 minutos",
-        "tiempo_coc": "10 segundos",
-        "creacion": "2023-07-17",
-        "id_receta": 12
+        "preparacion": [
+            "preparar un espresso",
+            "agregar 7 oz de leche"
+        ],
+        "tiempo_prep": "10 minutos",
+        "tiempo_coc": "5 segundos",
+        "creacion": "2023-07-18",
+        "id_receta": 13
+    },
+    "Ensalada de Tomate": {
+        "nombre": "Ensalada de Tomate",
+        "ingredientes": [
+            [
+                "sal",
+                1,
+                "gramos"
+            ]
+        ],
+        "preparacion": [
+            "picar tomate",
+            "picar lechuga"
+        ],
+        "tiempo_prep": "10 minutos",
+        "tiempo_coc": "nada",
+        "creacion": "2023-07-18",
+        "id_receta": 14
+    },
+    "Puchero con Poroto": {
+        "nombre": "Puchero con Poroto",
+        "ingredientes": [
+            [
+                "papa",
+                500,
+                "gramos"
+            ],
+            [
+                "zapallo",
+                500,
+                "gramos"
+            ],
+            [
+                "sal",
+                1,
+                "gramos"
+            ]
+        ],
+        "preparacion": [
+            "agregar medio choclo",
+            "carne trozada",
+            "hervir agua",
+            "Hervir Puchero"
+        ],
+        "tiempo_prep": "2 horas",
+        "tiempo_coc": "3 horas",
+        "creacion": "2023-07-11",
+        "id_receta": 1
     }
 }
